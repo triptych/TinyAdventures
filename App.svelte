@@ -1,34 +1,35 @@
 <script>
- // import Button from "./Button.svelte";
- let name = "Barry The Barbarian";
- let ran = ["A giant monster", "A treasure", "A friend"];
+  // import Button from "./Button.svelte";
+  import Field from "./components/Field.svelte";
+  let name = "Barry The Barbarian";
+  let ran = ["A giant monster", "A treasure", "A friend"];
 
- function updateMessage() {
-   // let num = Math.floor(Math.random() * random.length);
-   // console.log("updatemessge: " + num);
-   // name = ran[num];
-   // console.log("name:" + name);
-   console.log("hi");
-   let num = Math.floor(Math.random() * ran.length);
-   //name = ran[0];
-   console.log("num:" + num);
-   console.log("updatemessge: " + num);
-   name = ran[num];
- }
- function goUp() {
-   console.log("goup");
- }
- function goDown() {
-   console.log("godown");
- }
+  function updateMessage() {
+    // let num = Math.floor(Math.random() * random.length);
+    // console.log("updatemessge: " + num);
+    // name = ran[num];
+    // console.log("name:" + name);
+    console.log("hi");
+    let num = Math.floor(Math.random() * ran.length);
+    //name = ran[0];
+    console.log("num:" + num);
+    console.log("updatemessge: " + num);
+    name = ran[num];
+  }
+  function goUp() {
+    console.log("goup");
+  }
+  function goDown() {
+    console.log("godown");
+  }
 
- function goLeft() {
-   console.log("goLeft");
- }
+  function goLeft() {
+    console.log("goLeft");
+  }
 
- function goRight() {
-   console.log("goRight");
- }
+  function goRight() {
+    console.log("goRight");
+  }
 </script>
 
 <style>
@@ -87,7 +88,8 @@
 	</h1>
 </header>
 <main>
-	<div class="display">{name}</div>
+	<!-- <div class="display">{name}</div> -->
+	<Field/>
 
 	<div class="interface">
 		<div class="up" on:click={goUp}>up</div>
