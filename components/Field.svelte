@@ -10,4 +10,7 @@
 </style>
 <script>
 	export let text;
+	$: {
+	  console.log(`field: the text is ${text}`);
+	}
 </script>
