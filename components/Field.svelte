@@ -1,5 +1,5 @@
 <div class="field-display">
-	[loading]
+	{text}
 </div>
 <style>
 	.field-display {
@@ -8,3 +8,6 @@
 	  border: 1px solid black;
 	}
 </style>
+<script>
+	export let text;
+</script>
