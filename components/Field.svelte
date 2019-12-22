@@ -1,7 +1,12 @@
-<div class="field-display">
-	{text}
+<div class="field-wrapper">
+	<div class="field-display">
+		{text}
+	</div>
+	<p>
+		Going: {dir.split("|")[0]}. {err}. Turn: {turns}
+	</p>
 </div>
-Going: {dir.split("|")[0]}. {err}. Steps: {steps}
+
 <style>
 	.field-display {
 	  width: 1fw;
@@ -16,7 +21,7 @@ Going: {dir.split("|")[0]}. {err}. Steps: {steps}
 	};
 	let text = "loading";
 	let err = "";
-	let steps = 0;
+	let turns = 0;
 	const world = [
 	  ["forest", "forest wall", "mountain"],
 	  ["cliff", "meadow", "spring"],
@@ -27,7 +32,7 @@ Going: {dir.split("|")[0]}. {err}. Steps: {steps}
 	$: {
 	  //console.log(`field: the text is ${dir}`);
 	  err = "You continue on your journey";
-	  steps = dir.split("|")[1] ? dir.split("|")[1] : 0;
+	  turns = dir.split("|")[1] ? dir.split("|")[1] : 0;
 	  switch (dir.split("|")[0]) {
 	    case "north":
 	      if (loc.y > 0) {

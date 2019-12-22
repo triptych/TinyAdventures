@@ -2,6 +2,9 @@
   // import Button from "./Button.svelte";
   import Field from "./components/Field.svelte";
   import Controls from "./components/Controls.svelte";
+  import Stats from "./components/Stats.svelte";
+  import Row from "./components/Row.svelte";
+
   let name = "Barry The Barbarian";
   let ran = ["A giant monster", "A treasure", "A friend"];
 
@@ -27,11 +30,11 @@
 </script>
 
 <style>
-	header,
-	main,
-	footer {
-	  font-family: sans-serif;
-	}
+			header,
+			main,
+			footer {
+			  font-family: sans-serif;
+			}
 </style>
 
 <header>
@@ -41,14 +44,16 @@
 </header>
 <main>
 	<!-- <div class="display">{name}</div> -->
-	<Field dir={txt}/>
-<Controls on:direction={handleDirection}/>
-	
-	<div>
-		<button on:click={updateMessage}>
-			next
-		</button>
-	</div>
+<Field dir={txt}/>
+
+<Row>
+  <div slot="left">
+    <Controls on:direction={handleDirection} />
+  </div>
+  <div slot="right">
+    <Stats/>
+  </div>
+</Row>
 </main>
 <footer>
 By Andrew Wooldridge
