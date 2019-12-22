@@ -22,17 +22,17 @@
 	  border: 1px solid white;
 	}
 
-	.up {
+	.north {
 	  grid-column-start: 2;
 	}
-	.down {
+	.south {
 	  grid-column-start: 2;
 	  grid-row-start: 3;
 	}
-	.left {
+	.west {
 	  grid-column-start: 1;
 	}
-	.right {
+	.east {
 	  grid-column-start: 3;
 	}
 </style>
@@ -40,30 +40,44 @@
   import { createEventDispatcher } from "svelte";
 
   const dispatch = createEventDispatcher();
+  let actionNum = 0;
 
-  function goUp() {
-    console.log("goup");
+  function goNorth() {
+    console.log("go north");
+    actionNum++;
     dispatch("direction", {
-      text: "Hello!"
+      text: "north|" + actionNum
     });
   }
-  function goDown() {
-    console.log("godown");
+  function goSouth() {
+    console.log("go south");
+    actionNum++;
+    dispatch("direction", {
+      text: "south|" + actionNum
+    });
   }
 
-  function goLeft() {
-    console.log("goLeft");
+  function goWest() {
+    console.log("go west");
+    actionNum++;
+    dispatch("direction", {
+      text: "west|" + actionNum
+    });
   }
 
-  function goRight() {
-    console.log("goRight");
+  function goEast() {
+    console.log("go east");
+    actionNum++;
+    dispatch("direction", {
+      text: "east|" + actionNum
+    });
   }
 </script>
 
 <div class="interface">
-		<div class="up" on:click={goUp}>up</div>
-		<div class="down" on:click={goDown}>down</div>
-		<div class="left" on:click={goLeft}>left</div>
-		<div class="right" on:click={goRight}>right</div>
+		<div class="north" on:click={goNorth}>North</div>
+		<div class="south" on:click={goSouth}>South</div>
+		<div class="west" on:click={goWest}>West</div>
+		<div class="east" on:click={goEast}>East</div>
 	
 	</div>

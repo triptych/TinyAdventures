@@ -41,7 +41,7 @@
 </header>
 <main>
 	<!-- <div class="display">{name}</div> -->
-	<Field text={txt}/>
+	<Field dir={txt}/>
 <Controls on:direction={handleDirection}/>
 	
 	<div>
