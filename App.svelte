@@ -5,6 +5,8 @@
   import Stats from "./components/Stats.svelte";
   import Row from "./components/Row.svelte";
 
+  import { goldcoins } from "./stores/goldcoins.js";
+
   let name = "Barry The Barbarian";
   let ran = ["A giant monster", "A treasure", "A friend"];
 
@@ -21,11 +23,14 @@
     console.log("num:" + num);
     console.log("updatemessge: " + num);
     name = ran[num];
+    goldcoins.update(n => Math.floor(Math.random() * 10));
   }
 
   function handleDirection(event) {
     console.log("handleDirection:", event.detail.text);
     txt = event.detail.text;
+    //temp to test subscriptions
+    goldcoins.update(n => Math.floor(Math.random() * 10));
   }
 </script>
 

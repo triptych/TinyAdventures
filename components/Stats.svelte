@@ -1,7 +1,26 @@
 <script>
-let hp = 100;
-let mana = 100;
-let gold = 0;
+// let hp = 100;
+// let mana = 100;
+// let gold = 0;
+import {hitpoints} from "../stores/hitpoints.js";
+import {manapoints} from "../stores/manapoints.js";
+import {goldcoins} from "../stores/goldcoins.js";
+let hp;
+let mana;
+let gold;
+
+const unsubhp = hitpoints.subscribe( value=> {
+  hp = value;
+});
+
+const unsubmana = manapoints.subscribe( value => {
+  mana = value;
+})
+
+const unsubgold = goldcoins.subscribe( value => {
+  gold = value;
+})
+
 </script>
 <style>
   .stats-display {
