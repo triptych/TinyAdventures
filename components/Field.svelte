@@ -15,6 +15,8 @@
 	}
 </style>
 <script>
+	import { worldArr } from "../data/world.js";
+
 	let loc = {
 	  x: 1,
 	  y: 1
@@ -30,7 +32,6 @@
 
 	export let dir;
 	$: {
-	  //console.log(`field: the text is ${dir}`);
 	  err = "You continue on your journey";
 	  turns = dir.split("|")[1] ? dir.split("|")[1] : 0;
 	  switch (dir.split("|")[0]) {
@@ -67,6 +68,15 @@
 	}
 
 	function showLoc(location) {
-	  text = world[location.y][location.x];
+	  //text = world[location.y][location.x];
+	  console.log("worldArr", worldArr);
+	  console.log("location.x", location.x);
+	  console.log("location.y", location.y);
+	  worldArr.forEach(ele => {
+	    console.log("element:", ele);
+	    if (ele.trigger.x == location.x && ele.trigger.y == location.y) {
+	      text = ele.description;
+	    }
+	  });
 	}
 </script>
