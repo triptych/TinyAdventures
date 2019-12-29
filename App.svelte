@@ -4,6 +4,7 @@
   import Controls from "./components/Controls.svelte";
   import Stats from "./components/Stats.svelte";
   import Row from "./components/Row.svelte";
+  import Inventory from "./components/Inventory.svelte";
 
   import { goldcoins } from "./stores/goldcoins.js";
 
@@ -57,6 +58,14 @@
   </div>
   <div slot="right">
     <Stats/>
+  </div>
+</Row>
+<Row>
+  <div slot="left">
+    <Inventory/>
+  </div>
+  <div slot="right">
+  
   </div>
 </Row>
 </main>
