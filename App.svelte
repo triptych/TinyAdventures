@@ -48,7 +48,7 @@
 	A Tiny Adventure
 	</h1>
 </header>
-<main>
+<main class="bg-yellow-500">
 	<!-- <div class="display">{name}</div> -->
 <Field dir={txt}/>
 
