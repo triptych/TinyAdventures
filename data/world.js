@@ -10,7 +10,7 @@ export let worldArr = [
   },
   {
     id: 0,
-    description: `This is the starting point. See it there on the ground`,
+    description: `This is the starting point. See it there on the ground.`,
     trigger: {
       x: 1,
       y: 1
