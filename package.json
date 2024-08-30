@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@sveltech/routify": "1.0.1-0",
-    "svelte": "3.16.5"
+    "svelte": "4.2.19"
   },
   "scripts": {
     "build": "rollup -c",
